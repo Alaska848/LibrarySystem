@@ -1,20 +1,20 @@
-import { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  ScrollView,
-  Alert,
-  KeyboardAvoidingView,
-  Platform,
-} from "react-native";
+import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import { Link, useRouter } from "expo-router";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import { auth, db } from "../Firebase"; 
-import { FontAwesome5, Ionicons } from "@expo/vector-icons";
+import { useState } from "react";
+import {
+  Alert,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { auth, db } from "../Firebase";
 
 export default function Login() {
   const router = useRouter();
@@ -48,14 +48,14 @@ export default function Login() {
         Alert.alert("Done!", "LOGGED IN SUCCESSFULLY!", [
           {
             text: "Ok",
-            onPress: () => router.replace("/admin"), // 🔁 replace with your admin route
+            onPress: () => router.replace("/"), // 🔁 replace with your admin route
           },
         ]);
       } else {
         Alert.alert("Done!", "LOGGED IN SUCCESSFULLY!", [
           {
             text: "Ok",
-            onPress: () => router.replace("/home"), // 🔁 replace with your home route
+            onPress: () => router.replace("/"), // 🔁 replace with your home route
           },
         ]);
       }
